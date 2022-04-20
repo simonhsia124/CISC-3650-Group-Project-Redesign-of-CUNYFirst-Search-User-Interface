@@ -32,3 +32,11 @@ ul {
   li a:hover {
     background-color: rgb(24, 168, 96);
   }
+
+  h1 {
+    text-align: center;
+  }
+  .textbox{
+    height: 120px;
+    width: 200px;
+  }

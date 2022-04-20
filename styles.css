@@ -42,3 +42,8 @@ textarea {
   margin-right: auto;
   font-size: large;
 }
+p {
+  font-size: larger;
+  font-family: 'Times New Roman', Times, serif;
+  
+}

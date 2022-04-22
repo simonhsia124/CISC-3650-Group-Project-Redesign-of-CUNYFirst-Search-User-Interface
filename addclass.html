@@ -32,7 +32,7 @@
             <label for="institution">Institution: </label>
             <select name="institution" id="institution">
                 <option value="make_selection">Make a selection</option>
-                <option value="brooklyn_college">Brooklyn College</option>
+                <option value="Brooklyn college">Brooklyn College</option>
             </select>
             <br><br>
             <!--This label handles academic terms-->
@@ -46,22 +46,53 @@
             <label for="subject">Subject: </label>
             <select name="subject" id="subject">
                 <option value="make_selection">Make a selection</option>
-                <option value="spring_2021">CISC</option>
+                <option value="CISC">CISC</option>
             </select>
             <br><br>
             <!--This label handles course numbers based on the chosen subject-->
             <label for="course_number">Course number: </label>
             <select name="course_number" id="course_number">
                 <option value="make_selection">Make a selection</option>
-                <option value="course_number_1">1115</option>
-                <option value="course_number_1">3115</option>
-                <option value="course_number_1">3130</option>
-                <option value="course_number_1">3220</option>
-                <option value="course_number_1">4900</option>
+                <option value="1115">1115</option>
+                <option value="2210">2210</option>
+                <option value="3115">3115</option>
+                <option value="3130">3130</option>
+                <option value="3142">3142</option>
+                <option value="3220">3220</option>
+                <option value="3650">3650</option>
+                <option value="4900">4900</option>
             </select>
             <br><br>
-            <button>Add</button>
+            <button onClick="addClass()">Add</button>
         </div>
+
+        
+        <p style="text-align: center; font-weight: bold;">Your Added classes</p>
+        <div id="classes_to_add">
+            <ul> 
+              
+            </ul>
+        </div>
+
+        <br><br><button>Submit</button>
+        
         
     </body>
+
+     <!--Javascript and JQuery-->
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script>  // Javascript functions here
+        function addClass() {
+            // Get the input
+            var input_subject = document.getElementById("subject").value
+            var input_course_no = document.getElementById("course_number").value;
+            
+            // Put the input into the list
+            $(document).ready(function() {
+                $("#classes_to_add").append('<li>' + input_subject + '  '+ input_course_no + '</li><br>' );
+          });
+        }
+
+        
+    </script>
 </html>

@@ -6,7 +6,7 @@ p.main_title {
 }
 
 body {
-  background-color: lightblue;
+  background-color: rgb(169, 224, 243);
 }
 
 ul {
@@ -15,6 +15,12 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #333;
+}
+
+#classes_to_add {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid black;
+  width: 150px;
 }
 
  li {
@@ -53,6 +59,11 @@ p {
 
 #txt {
   text-align: center;
+}
+
+label {
+  font-size: larger;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 

@@ -1,98 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Revamped CUNYFirst - Search class</title>
-        <link rel="stylesheet" href="styles.css" type="text/css">
-        <script src="jquery-3.6.0.min.js"></script>
-    </head>
-    <body>
-        <header>
-            <div>
-                <img src="logo.png" alt="logo" id="banner" height="100px">
-            </div>
-        </header>
-        
-        <!--Navbar-->
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="addclass.html">Add classes</a></li>
-            <li><a href="confirmclass.html">Confirm classes</a></li>
-            <li><a href="journal.html">Journal</a></li>
-        </ul>
 
-        <!---Main title-->
-        <p class = "main_title" >Add class to cart</p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revamped CUNYFirst - Search class</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="jquery-3.6.0.min.js"></script>
+</head>
 
-        <!--This div contains the main search area-->
+<body>
+    <header>
+        <div>
+            <img src="logo.png" alt="logo" id="banner" height="100px">
+        </div>
+    </header>
+
+    <!--Navbar-->
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="addclass.html">Add classes</a></li>
+        <li><a href="confirmclass.html">Confirm classes</a></li>
+        <li><a href="journal.html">Journal</a></li>
+    </ul>
+
+    <!---Main title-->
+    <p class="main_title">Add class to cart</p>
+
+    <!--This div contains the main search area-->
+    <form action="confirmclass.html" id="confirm" name="confirm" method="get">
         <div class="search_class">
-            <!--This label handles CUNY colleges-->
-            <label for="institution">Institution: </label>
-            <select name="institution" id="institution">
-                <option value="make_selection">Make a selection</option>
-                <option value="Brooklyn college">Brooklyn College</option>
-            </select>
-            <br><br>
-            <!--This label handles academic terms-->
-            <label for="term">Term: </label>
-            <select name="term" id="term">
-                <option value="make_selection">Make a selection</option>
-                <option value="spring_2021">Spring 2022</option>
-            </select>
-            <br><br>
-            <!--This label handles subjects based on the CUNY colleges-->
-            <label for="subject">Subject: </label>
-            <select name="subject" id="subject">
-                <option value="make_selection">Make a selection</option>
-                <option value="CISC">CISC</option>
-            </select>
-            <br><br>
-            <!--This label handles course numbers based on the chosen subject-->
-            <label for="course_number">Course number: </label>
-            <select name="course_number" id="course_number">
-                <option value="make_selection">Make a selection</option>
-                <option value="1115">1115</option>
-                <option value="2210">2210</option>
-                <option value="3115">3115</option>
-                <option value="3130">3130</option>
-                <option value="3142">3142</option>
-                <option value="3220">3220</option>
-                <option value="3650">3650</option>
-                <option value="4900">4900</option>
-            </select>
-            <br><br>
-            <button onClick="addClass()">Add</button>
+            <table id="class">
+                <tr>
+                    <td>
+                        <label for="institution">Institution: </label>
+                        <select name="institution" id="institution">
+                            <option value="make_selection">Make a selection</option>
+                            <option value="Brooklyn college">Brooklyn College</option>
+                        </select>
+                        <br><br>
+                        <!--This label handles academic terms-->
+                        <label for="term">Term: </label>
+                        <select name="term" id="term">
+                            <option value="make_selection">Make a selection</option>
+                            <option value="spring_2021">Spring 2022</option>
+                        </select>
+                        <br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="subject">Subject: </label>
+                        <select name="subject" id="subject">
+                            <option value="make_selection">Make a selection</option>
+                            <option value="CISC">CISC</option>
+                        </select>
+                        <input type="hidden" name="subject" id="subject" />
+                    </td>
+                    <td>
+                        <label for="course_number">Course number: </label>
+                        <select name="course_number" id="course_number">
+                            <option value="make_selection">Make a selection</option>
+                            <option value="1115">1115</option>
+                            <option value="2210">2210</option>
+                            <option value="3115">3115</option>
+                            <option value="3130">3130</option>
+                            <option value="3142">3142</option>
+                            <option value="3220">3220</option>
+                            <option value="3650">3650</option>
+                            <option value="4900">4900</option>
+                        </select>
+                        <input type="hidden" name="courseNumber" id="courseNumber" />
+                    </td>
+                </tr>
+            </table>
+
+            <input type="submit" value="submit" id="buttonAdd" value="Checkout" />
         </div>
 
-        
-        <p style="text-align: center; font-weight: bold;">Your Added classes</p>
-        <div id="classes_to_add">
-            <ul> 
-              
-            </ul>
-        </div>
+    </form>
+    <button onClick="addClass()">Add</button>
 
-        <br><br><button>Submit</button>
-        
-        
-    </body>
 
-     <!--Javascript and JQuery-->
-    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
-    <script>  // Javascript functions here
-        function addClass() {
-            // Get the input
-            var input_subject = document.getElementById("subject").value
-            var input_course_no = document.getElementById("course_number").value;
-            
-            // Put the input into the list
-            $(document).ready(function() {
-                $("#classes_to_add").append('<li>' + input_subject + '  '+ input_course_no + '</li><br>' );
-          });
-        }
+    <p style="text-align: center; font-weight: bold;">Your Added classes</p>
+    <div id="classes_to_add">
+        <ul>
 
-        
-    </script>
+        </ul>
+    </div>
+
+
+
+
+</body>
+
+<!--Javascript and JQuery-->
+<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+<script>  // Javascript functions here
+    function addClass() {
+        // Get the input
+        var input_subject = document.getElementById("subject").value
+        var input_course_no = document.getElementById("course_number").value;
+
+        // Put the input into the list
+        $(document).ready(function () {
+            $("#classes_to_add").append('<li>' + input_subject + '  ' + input_course_no + '</li><br>');
+        });
+    }
+
+
+</script>
+
 </html>

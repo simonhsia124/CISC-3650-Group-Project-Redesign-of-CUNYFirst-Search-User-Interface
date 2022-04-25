@@ -25,3 +25,7 @@ window.addEventListener("load", function () {
     document.forms.order.elements.courseNumber6.value = orderFields[69];
 
 });
+
+window.addEventListener("load", function () {
+    this.alert("Your Confirmed Classes.");
+});

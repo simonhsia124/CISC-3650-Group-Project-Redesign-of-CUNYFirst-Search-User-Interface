@@ -324,6 +324,8 @@
 
         </ul>
     </div>
+    <br>
+    <button id="buttonClear" onclick="clearClass()">Clear</button>
 
 
 
@@ -374,12 +376,14 @@
         $(document).ready(function () {
             $("#classes_to_add").append('<li>' + input_subject6 + '  ' + input_course_no6 + '</li><br>');
         });
-
-        // if (input_subject != "make_selection" && input_course_no != "make_selection") {
-        //     document.getElementById("classes_to_add").innerHTML += "<li>" + input_subject + " " + input_course_no + "</li>";
-        // }
-
     }
+
+    function clearClass() {
+        const audio = new Audio('Check-mark-sound.mp3');
+        $("#classes_to_add").empty();
+        audio.play();
+    }
+
 
 
 </script>

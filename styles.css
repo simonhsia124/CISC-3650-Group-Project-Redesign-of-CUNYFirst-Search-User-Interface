@@ -154,3 +154,9 @@ label {
   box-shadow: none;
   transform: translateY(0);
 }
+
+.class {
+  border: #000000;
+  border-style: solid;
+
+}

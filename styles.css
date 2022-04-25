@@ -136,7 +136,7 @@ label {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-
+  float: right;
   will-change: transform;
 }
 

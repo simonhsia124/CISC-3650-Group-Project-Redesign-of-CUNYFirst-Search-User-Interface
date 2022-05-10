@@ -181,16 +181,16 @@ label {
   will-change: transform;
 }
 
-#buttonConfirm:disabled {
+#buttonClear:disabled {
   pointer-events: none;
 }
 
-#buttonConfirm:hover {
-  box-shadow: rgba(29, 59, 224, 0.25) 0 8px 15px;
+#buttonClear:hover {
+  box-shadow: rgba(194, 68, 18, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
 
-#buttonConfirm:active {
+#buttonClear:active {
   box-shadow: none;
   transform: translateY(0);
 }
@@ -198,5 +198,14 @@ label {
 .class {
   border: #000000;
   border-style: solid;
+}
 
+aside {
+  float: right;
+  width: 30%;
+}
+
+#buttonClear {
+  margin: 15px;
+  float: right;
 }

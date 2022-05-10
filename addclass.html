@@ -28,6 +28,16 @@
     <!---Main title-->
     <p class="main_title">Add class to cart</p>
 
+    <aside>
+        <p style="text-align: center; font-weight: bold;">Added Classes</p>
+        <div id="classes_to_add">
+            <ul>
+
+            </ul>
+        </div>
+        <button id="buttonClear" onclick="clearClass()">Clear</button>
+    </aside>
+
     <!--This div contains the main search area-->
     <form action="confirmclass.html" id="confirm" name="confirm" method="get">
         <div class="search_class">
@@ -316,19 +326,6 @@
     </form>
     <br>
     <button class="button-add" onClick="addClass()">Add</button>
-
-
-    <p style="text-align: center; font-weight: bold;">Your Added classes</p>
-    <div id="classes_to_add">
-        <ul>
-
-        </ul>
-    </div>
-    <br>
-    <button id="buttonClear" onclick="clearClass()">Clear</button>
-
-
-
 
 </body>
 

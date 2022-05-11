@@ -21,7 +21,7 @@
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="addclass.html">Add classes</a></li>
-        <li><a href="confirmclass.html">Confirm classes</a></li>
+        <li><a href="confirmclass.html">Class Schedule</a></li>
         <li><a href="journal.html">Journal</a></li>
     </ul>
 
@@ -35,7 +35,9 @@
 
             </ul>
         </div>
-        <button id="buttonClear" onclick="clearClass()">Clear</button>
+        <button id="buttonClear" onclick="clearForm()">Clear Form</button>
+        <button id="buttonClear" onclick="clearClass()">Clear Class</button>
+
     </aside>
 
     <!--This div contains the main search area-->
@@ -488,7 +490,13 @@
 
 
             <br>
+
             <input type="submit" value="confirm" id="buttonConfirm" value="Checkout" />
+            <aside style="float: right; width: auto; opacity: .5;">
+                <p>Make sure to double check your classes before confirming
+                </p>
+            </aside>
+
 
         </div>
 
@@ -562,6 +570,11 @@
         $("#classes_to_add").empty();
         audio.play();
     }
+
+    function clearForm() {
+        document.forms['confirm'].reset();
+    }
+
 
 
 

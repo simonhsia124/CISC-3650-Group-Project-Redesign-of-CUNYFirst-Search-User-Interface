@@ -22,12 +22,14 @@
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="addclass.html">Add classes</a></li>
-        <li><a href="confirmclass.html">Confirm classes</a></li>
+        <li><a href="confirmclass.html">Class Schedule</a></li>
         <li><a href="journal.html">Journal</a></li>
     </ul>
 
     <!---Main title-->
-    <p class="main_title">Confirm classes</p>
+    <h1 class="main_title">Class Schedule</h1>
+
+
 
     <form id="order" name="order">
         <table id="orderTable">
@@ -35,18 +37,22 @@
                 <td>
                     <label for="class"> Subject</label>
                     <input type="text" name="subject" id="subject" readonly />
+                    <input type="hidden" name="s" id="s" />
                 </td>
                 <td>
                     <label for="class"> Course Number</label>
                     <input type="text" name="courseNumber" id="courseNumber" readonly />
+
                 </td>
                 <td>
                     <label for="class"> Course Porfessor</label>
                     <input type="text" name="course_prof" id="course_prof" readonly />
+
                 </td>
                 <td>
                     <label for="class"> Course Time</label>
                     <input type="text" name="courseTime" id="courseTime" readonly />
+
                 </td>
             </tr>
 
@@ -144,9 +150,10 @@
                     <input type="text" name="courseTime6" id="courseTime6" readonly />
                 </td>
             </tr>
-
         </table>
+
     </form>
+
 
 </body>
 
